@@ -1,12 +1,11 @@
 ![image](https://raw.githubusercontent.com/MomsFriendlyRobotCompany/fake_rpi/master/pics/pi-python.jpg)
 
-Fake Raspberry Pi
-=================
+# Fake Raspberry Pi
 
-[![Latest Version](https://img.shields.io/pypi/v/fake_rpi.svg)](https://pypi.python.org/pypi/fake_rpi/)
-[![License](https://img.shields.io/pypi/l/fake_rpi.svg)](https://pypi.python.org/pypi/fake_rpi/)
-[![Travis-ci](https://travis-ci.org/MomsFriendlyRobotCompany/fake_rpi.svg?branch=master)](https://travis-ci.org/MomsFriendlyRobotCompany/fake_rpi)
-[![Python Versions](https://img.shields.io/pypi/pyversions/fake_rpi.svg)](https://pypi.python.org/pypi/fake_rpi/)
+[![Actions Status](https://github.com/MomsFriendlyRobotCompany/fake_rpi/workflows/CheckPackage/badge.svg)](https://github.com/MomsFriendlyRobotCompany/fake_rpi/actions)
+![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/fake_rpi)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fake_rpi)
+![PyPI](https://img.shields.io/pypi/v/fake_rpi)
 
 **Why??**
 
@@ -14,7 +13,7 @@ I do a lot of development on my Powerbook and I got tired of constantly
 creating a fake interface for dev on my laptop and testing on Travis.ci.
 
 -   2017 Apr 2: **Beta Quality**
--   2017 Apr 8: **Initial** python3 support \... this is a pain
+-   2017 Apr 8: **Initial** python3 support
 
 So, does this simulate everything on a Raspberry Pi? **No!** Right now
 it simulates what I use and need. Over time, more will be added. You are
@@ -29,8 +28,7 @@ also welcome to submit pull requests for things I haven\'t added yet.
 | smbus    | i2c                   |
 | serial   | not done yet          |
 
-Install
--------
+## Install
 
 The preferred way to install this is:
 
@@ -38,24 +36,22 @@ The preferred way to install this is:
 pip install fake_rpi
 ```
 
-Development
------------
+## Development
 
 To submit pull requests and do development:
 
 ```
 git clone https://github.com/MomsFriendlyRobotCompany/fake_rpi.git
 cd fake_rpi
-pip install -e .
+poetry install
 ```
 
-Usage
------
+## Usage
 
-To fake [RPi.GPIO]{.title-ref} or [smbus]{.title-ref}, this following
+To fake RPi.GPIO or smbus, this following
 code must be executed before your application:
 
-``` {.python}
+```python
 # Replace libraries by fake ones
 import sys
 import fake_rpi
@@ -66,7 +62,7 @@ sys.modules['smbus'] = fake_rpi.smbus # Fake smbus (I2C)
 
 Then you can keep your usual imports in your application:
 
-``` {.python}
+```python
 import RPi.GPIO as GPIO
 import smbus
 
@@ -79,7 +75,7 @@ b = sm.read_byte_data(0x21, 0x32)  # read in a byte
 
 Turning on/off fake calls logging:
 
-``` {.python}
+```python
 from fake_rpi import toggle_print
 
 # by default it prints everything to std.error
@@ -90,7 +86,7 @@ But I need `smbus` to return a specific byte for unit testing! Ok, then
 create a child of my `smbus` like below and modify *only* the methods
 you need changed:
 
-``` {.python}
+```python
 from fake_rpi import smbus
 from fake_rpi import printf
 
@@ -130,11 +126,11 @@ __main__.MyBus.read_byte_data(1, 2): 72
 __main__.MyBus.read_i2c_block_data(1, 2, 3): [90, 90, 90]
 ```
 
-Change Log
-----------
+# Change Log
 
 |  Date      | Ver.  | Notes                                         |
 | ---------- | ----- | --------------------------------------------- |
+| 2020-02-03 | 0.6.3 | moved to toml and github workflows            |
 | 2019-10-19 | 0.6.2 | fixes from scivision and Rotzbua              |
 | 2019-03-29 | 0.6.1 | bug fix with randint range                    |
 | 2017-11-30 | 0.6.0 | bug fix with printing                         |
@@ -151,7 +147,7 @@ Change Log
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
-\"Software\"), to deal in the Software without restriction, including
+"Software"), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
@@ -160,7 +156,7 @@ the following conditions:
 The above copyright notice and this permission notice shall be included
 in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
