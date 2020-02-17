@@ -37,6 +37,7 @@ pytest = "^5.2"
 # mypy = "*"
 
 # [mypy-pi_servo_serial]
+autopep8 = "^1.5"
 # ignore_missing_imports = True
 
 [build-system]
