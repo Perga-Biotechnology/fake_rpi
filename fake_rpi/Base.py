@@ -3,9 +3,12 @@
 # Copyright (c) 2017 Kevin Walchko
 # see LICENSE for full details
 ##############################################
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Base(object):
     def __init__(self, name=None):
-        print('<<< WARNING: using fake raspberry pi interfaces >>>')
+        logger.info('[fake_rpi] Using fake raspberry pi interfaces')
         if name:
-            print('<<< Using: {} >>>'.format(name))
+            logger.info('[fake_rpi] Using: {}'.format(name))

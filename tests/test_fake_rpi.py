@@ -75,3 +75,4 @@ def test_serial():
     s.port  = '/dev/serial'
     s.open()
     assert s.isOpen() is True
+

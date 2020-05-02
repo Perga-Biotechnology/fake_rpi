@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import RPi.GPIO
 from fake_rpi import printf
 from fake_rpi import toggle_print
 
@@ -11,9 +12,6 @@ sys.modules['RPi'] = fake_rpi.RPi
 sys.modules['smbus'] = fake_rpi.smbus
 
 # Then keep the transparent import everywhere in the application and dependencies
-import RPi.GPIO as GPIO
-import smbus
-
 
 toggle_print(True)  # turn on/off printing
 
