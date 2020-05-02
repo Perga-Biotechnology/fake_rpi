@@ -1,16 +1,11 @@
-![image](https://raw.githubusercontent.com/MomsFriendlyRobotCompany/fake_rpi/master/pics/pi-python.jpg)
+# Fake Raspberry Pi Interface
 
-# Fake Raspberry Pi
-
-[![Actions Status](https://github.com/MomsFriendlyRobotCompany/fake_rpi/workflows/CheckPackage/badge.svg)](https://github.com/MomsFriendlyRobotCompany/fake_rpi/actions)
-![GitHub](https://img.shields.io/github/license/MomsFriendlyRobotCompany/fake_rpi)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fake_rpi)
-![PyPI](https://img.shields.io/pypi/v/fake_rpi)
+[![Build Status](https://travis-ci.org/ycbayrak/fake_rpi.svg?branch=master)](https://travis-ci.org/ycbayrak/fake_rpi)
 
 **Why??**
 
 I do a lot of development on my Powerbook and I got tired of constantly
-creating a fake interface for dev on my laptop and testing on Travis.ci.
+creating a fake interface for dev on my laptop and testing on Travis CI.
 
 -   2017 Apr 2: **Beta Quality**
 -   2017 Apr 8: **Initial** python3 support
@@ -41,7 +36,7 @@ pip install fake_rpi
 To submit pull requests and do development:
 
 ```
-git clone https://github.com/MomsFriendlyRobotCompany/fake_rpi.git
+git clone https://github.com/ycbayrak/fake_rpi.git
 cd fake_rpi
 poetry install
 ```
@@ -110,10 +105,10 @@ Here is the output from `example.py` in the `git` repo when the printing
 is toggled on or off:
 
 ```
-kevin@Logan fake_rpi $ ./example.py
+$ ./example.py
 <<< WARNING: using fake raspberry pi interfaces >>>
 
-kevin@Logan fake_rpi $ ./example.py
+$ ./example.py
 <<< WARNING: using fake raspberry pi interfaces >>>
 fake_rpi.RPi.PWM.__init__()
 fake_rpi.RPi.PWM.start(5,)
@@ -126,40 +121,3 @@ __main__.MyBus.read_byte_data(1, 2): 72
 __main__.MyBus.read_i2c_block_data(1, 2, 3): [90, 90, 90]
 ```
 
-# Change Log
-
-|  Date      | Ver.  | Notes                                         |
-| ---------- | ----- | --------------------------------------------- |
-| 2020-02-03 | 0.6.3 | moved to toml and github workflows            |
-| 2019-10-19 | 0.6.2 | fixes from scivision and Rotzbua              |
-| 2019-03-29 | 0.6.1 | bug fix with randint range                    |
-| 2017-11-30 | 0.6.0 | bug fix with printing                         |
-| 2017-10-23 | 0.5.3 | bug fix with randint                          |
-| 2017-09-05 | 0.5.1 | flushing out interfaces                       |
-| 2017-07-07 | 0.3.0 | fixed bugs, print statement, and reduced dups |
-| 2017-04-08 | 0.1.0 | initial python3 setup and support             |
-| 2017-04-02 | 0.0.2 | pushed to pypi with landscape.io fixes        |
-| 2017-04-01 | 0.0.1 | created                                       |
-
-# MIT License
-
-**Copyright (c) 2017 Kevin J. Walchko**
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
