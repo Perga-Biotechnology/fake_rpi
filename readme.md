@@ -1,7 +1,9 @@
 # Fake Raspberry Pi Interface
 
+[![GitHub version](https://img.shields.io/github/v/release/ycbayrak/fake_rpi.svg)](https://github.com/ycbayrak/fake_rpi)
 [![Build Status](https://travis-ci.org/ycbayrak/fake_rpi.svg?branch=master)](https://travis-ci.org/ycbayrak/fake_rpi)
 [![GitHub issues](https://img.shields.io/github/issues/ycbayrak/fake_rpi)](https://GitHub.com/ycbayrak/fake_rpi/issues/)
+
 
 ## Use Case
 
