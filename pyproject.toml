@@ -20,7 +20,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.5"
+python = ">=3.6"
 numpy = "*"
 # pyserial = "^3.4"
 # colorama = "*"
