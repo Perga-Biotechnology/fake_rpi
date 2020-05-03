@@ -1,18 +1,14 @@
 # Fake Raspberry Pi Interface
 
 [![Build Status](https://travis-ci.org/ycbayrak/fake_rpi.svg?branch=master)](https://travis-ci.org/ycbayrak/fake_rpi)
+[![GitHub issues](https://img.shields.io/github/issues/ycbayrak/fake_rpi)](https://GitHub.com/ycbayrak/fake_rpi/issues/)
 
-**Why??**
+## Use Case
 
 I do a lot of development on my Powerbook and I got tired of constantly
 creating a fake interface for dev on my laptop and testing on Travis CI.
 
--   2017 Apr 2: **Beta Quality**
--   2017 Apr 8: **Initial** python3 support
-
-So, does this simulate everything on a Raspberry Pi? **No!** Right now
-it simulates what I use and need. Over time, more will be added. You are
-also welcome to submit pull requests for things I haven\'t added yet.
+So, does this simulate everything on a Raspberry Pi? **No!** 
 
 |          |                       |
 | -------- | --------------------- |
@@ -23,13 +19,6 @@ also welcome to submit pull requests for things I haven\'t added yet.
 | smbus    | i2c                   |
 | serial   | not done yet          |
 
-## Install
-
-The preferred way to install this is:
-
-```
-pip install fake_rpi
-```
 
 ## Development
 
