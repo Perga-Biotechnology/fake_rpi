@@ -2,8 +2,7 @@
 name = "fake_rpi"
 version = "0.6.4"
 description = "Fake Raspberry Pi programming interfaces for development or unit testing"
-authors = ["walchko <walchko@users.noreply.github.com>"]
-readme = "README.md"
+authors = ["ycbayrak <ycbayrak@users.noreply.github.com>"]
 license = "MIT"
 repository = 'https://github.com/ycbayrak/fake_rpi'
 keywords = ['raspberry', 'pi', 'fake', 'fake_rpi', 'i2c', 'spi', 'gpio', 'serial', 'picamera']
@@ -21,7 +20,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.6"
+python = ">=3.5"
 numpy = "*"
 # pyserial = "^3.4"
 # colorama = "*"
