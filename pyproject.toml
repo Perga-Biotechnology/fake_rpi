@@ -1,14 +1,12 @@
 [tool.poetry]
 name = "fake_rpi"
 version = "0.6.4"
-description = "A bunch of fake interfaces for development when not using the RPi or unit testing"
+description = "Fake Raspberry Pi programming interfaces for development or unit testing"
 authors = ["walchko <walchko@users.noreply.github.com>"]
-readme = "readme.md"
+readme = "README.md"
 license = "MIT"
-homepage = "https://pypi.org/project/fake_rpi/"
-repository = 'https://github.com/MomsFriendlyRobotCompany/fake_rpi'
-# documentation = "http://..."
-keywords = ['raspberry', 'pi', 'fake', 'fake_rpi', 'i2c', 'spi', 'gpio', 'serial']
+repository = 'https://github.com/ycbayrak/fake_rpi'
+keywords = ['raspberry', 'pi', 'fake', 'fake_rpi', 'i2c', 'spi', 'gpio', 'serial', 'picamera']
 classifiers = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
@@ -22,10 +20,6 @@ classifiers = [
     'Topic :: Software Development :: Libraries :: Application Frameworks'
 ]
 
-# [tool.poetry.scripts]
-# # script_name = 'myscript:main'
-# servoAX12 = "pyservos.bin.servoAX12:main"
-
 [tool.poetry.dependencies]
 python = ">=3.6"
 numpy = "*"
@@ -34,11 +28,6 @@ numpy = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-# mypy = "*"
-
-# [mypy-pi_servo_serial]
-autopep8 = "^1.5"
-# ignore_missing_imports = True
 
 [build-system]
 requires = ["poetry>=0.12"]
