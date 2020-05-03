@@ -9,7 +9,7 @@ from .wrappers import printf
 from .Base import Base
 
 
-class AWBGainModes:
+class eAWBGainModes:
     OFF = "off"
     AUTO = "auto"
     SUNLIGHT = "sunlight"
@@ -22,7 +22,7 @@ class AWBGainModes:
     HORIZON = "horizon"
 
 
-class ImageEffects:
+class eImageEffects:
     NONE = "none"
     NEGATIVE = "negative"
     SOLARIZE = "solarize"
@@ -47,7 +47,7 @@ class ImageEffects:
     DEINTERLACE2 = "deinterlace2"
 
 
-class FlashModes:
+class eFlashModes:
     OFF = "off"
     AUTO = "auto"
     ON = "on"
@@ -56,7 +56,7 @@ class FlashModes:
     TORCH = "torch"
 
 
-class ExposureModes:
+class eExposureModes:
     OFF = "off"
     AUTO = "auto"
     NIGHT = "night"
@@ -72,6 +72,11 @@ class ExposureModes:
     FIREWORKS = "fireworks"
 
 
+class eDRCStrengths:
+    OFF = 'off'
+    LOW = 'low'
+    MEDIUM = 'medium'
+    HIGH = 'high'
 
 class BGR(object):
     """Fake class"""
@@ -92,88 +97,23 @@ class BGR(object):
 class PiCamera(Base):
     """Fake class"""
 
-    AWB_MODES = (
-        'off',
-        'auto',
-        'sunlight',
-        'cloudy',
-        'shade',
-        'tungsten',
-        'fluorescent',
-        'incandescent',
-        'flash',
-        'horizon'
-    )
-    EXPOSURE_MODES = (
-        'off',
-        'auto',
-        'night',
-        'nightpreview',
-        'backlight',
-        'spotlight',
-        'sports',
-        'snow',
-        'beach',
-        'verylong',
-        'fixedfps',
-        'antishake',
-        'fireworks'
-    )
-    DRC_STRENGTHS= (
-        'off',
-        'low',
-        'medium',
-        'high'
-    )
-    FLASH_MODES = (
-        'off',
-        'auto',
-        'on',
-        'redeye',
-        'fillin',
-        'torch'
-    )
-
-    IMAGE_EFFECTS = (
-        'none',
-        'negative',
-        'solarize',
-        'sketch',
-        'denoise',
-        'emboss',
-        'oilpaint',
-        'hatch',
-        'gpen',
-        'pastel',
-        'watercolor',
-        'film',
-        'blur',
-        'saturation',
-        'colorswap',
-        'washedout',
-        'posterise',
-        'colorpoint',
-        'colorbalance',
-        'cartoon',
-        'deinterlace1',
-        'deinterlace2'
-    )
+    AWB_MODES = eAWBGainModes()
+    EXPOSURE_MODES = eExposureModes()
+    DRC_STRENGTHS= eDRCStrengths()
+    FLASH_MODES = eFlashModes()
+    IMAGE_EFFECTS = eImageEffects()
     
-    resolution = (0, 0)
-
+    resolution = (1280, 720)
     awb_gains = 0.0
-    awb_mode = "auto"
-
-
-    exposure_mode = "auto"
-    
+    awb_mode = PiCamera.AWB_MODES.AUTO
+    drc_strength = PiCamera.DRC_STRENGTHS.OFF
+    exposure_mode = PiCamera.EXPOSURE_MODES.AUTO
+    flash_mode = PiCamera.FLASH_MODES.OFF
+    image_effect = PiCamera.IMAGE_EFFECTS.NONE
     brightness = 50
     contrast = 0
     iso = 0
     sharpness = 0
-
-    flash_mode = "off"
-    image_effect = "none"
 
     def __init__(self):
         # empty constructor
@@ -192,10 +132,16 @@ class PiCamera(Base):
         pass
 
     @printf
-    def capture(self, image, format, use_video_port):
-        # this does nothing
+    def capture(output, format=None, use_video_port=False, resize=None, splitter_port=0, bayer=False, **options):
         pass
 
+    @printf
+    def capture_continuous(output, format=None, use_video_port=False, resize=None, splitter_port=0, burst=False, bayer=False, **options):
+        pass
+
+    @printf
+    def capture_sequence(outputs, format='jpeg', use_video_port=False, resize=None, splitter_port=0, burst=False, bayer=False, **options):
+        pass
 
 class array(object):
     """Fake class"""
