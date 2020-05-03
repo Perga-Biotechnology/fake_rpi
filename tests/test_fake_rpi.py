@@ -1,6 +1,5 @@
 from __future__ import print_function
 
-# Faking
 import sys
 import fake_rpi
 
@@ -61,7 +60,7 @@ def test_picamera():
     im_shape = (10, 10)
     c = picamera.PiCamera()
     bgr = picamera.array.PiRGBArray(c, size=im_shape)
-    # assert c.resolution == (100, 100)
+    assert c.resolution == (1280, 720)
     c.capture(1, 2, 3)
     im = bgr.array
     assert im.shape == im_shape

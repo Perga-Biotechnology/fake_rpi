@@ -105,11 +105,11 @@ class PiCamera(Base):
     
     resolution = (1280, 720)
     awb_gains = 0.0
-    awb_mode = PiCamera.AWB_MODES.AUTO
-    drc_strength = PiCamera.DRC_STRENGTHS.OFF
-    exposure_mode = PiCamera.EXPOSURE_MODES.AUTO
-    flash_mode = PiCamera.FLASH_MODES.OFF
-    image_effect = PiCamera.IMAGE_EFFECTS.NONE
+    awb_mode = AWB_MODES.AUTO
+    drc_strength = DRC_STRENGTHS.OFF
+    exposure_mode = EXPOSURE_MODES.AUTO
+    flash_mode = FLASH_MODES.OFF
+    image_effect = IMAGE_EFFECTS.NONE
     brightness = 50
     contrast = 0
     iso = 0
