@@ -2,9 +2,9 @@
 name = "fake_rpi"
 version = "0.6.4"
 description = "Fake Raspberry Pi programming interfaces for development or unit testing"
-authors = ["ycbayrak <ycbayrak@users.noreply.github.com>"]
+authors = ["ycbayrak <dev@perga.co>"]
 license = "MIT"
-repository = 'https://github.com/ycbayrak/fake_rpi'
+repository = 'https://github.com/Perga-Biotechnology/fake_rpi'
 keywords = ['raspberry', 'pi', 'fake', 'fake_rpi', 'i2c', 'spi', 'gpio', 'serial', 'picamera']
 classifiers = [
     'Development Status :: 4 - Beta',
@@ -22,8 +22,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.6"
 numpy = "*"
-# pyserial = "^3.4"
-# colorama = "*"
+importlib-metadata = {version="*", python="<3.8"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

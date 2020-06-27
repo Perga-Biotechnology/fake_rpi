@@ -11,3 +11,4 @@ tmp
 .pytest_cache
 .venv
 .vscode
+.lock

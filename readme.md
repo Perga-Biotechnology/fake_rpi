@@ -1,10 +1,5 @@
 # Fake Raspberry Pi Interface
 
-[![GitHub version](https://img.shields.io/github/v/release/ycbayrak/fake_rpi.svg)](https://github.com/ycbayrak/fake_rpi)
-[![Build Status](https://travis-ci.org/ycbayrak/fake_rpi.svg?branch=master)](https://travis-ci.org/ycbayrak/fake_rpi)
-[![GitHub issues](https://img.shields.io/github/issues/ycbayrak/fake_rpi)](https://GitHub.com/ycbayrak/fake_rpi/issues/)
-
-
 ## Use Case
 
 I do a lot of development on my Powerbook and I got tired of constantly
@@ -15,6 +10,7 @@ So, does this simulate everything on a Raspberry Pi? **No!**
 |          |                       |
 | -------- | --------------------- |
 | Adafruit | LSM303(accelerometer) |
+| nxp_imu  | adafruit accelerometer|
 | GPIO     | gpio pins             |
 | picamera | camera                |
 | RPi      | PWM                   |
@@ -24,13 +20,15 @@ So, does this simulate everything on a Raspberry Pi? **No!**
 
 ## Development
 
-To submit pull requests and do development:
+To submit pull requests for new sensors or fixes, just do:
 
 ```
 git clone https://github.com/ycbayrak/fake_rpi.git
 cd fake_rpi
 poetry install
 ```
+
+Then do a pull request.
 
 ## Usage
 
@@ -42,7 +40,8 @@ code must be executed before your application:
 import sys
 import fake_rpi
 
-sys.modules['RPi'] = fake_rpi.RPi     # Fake RPi (GPIO)
+sys.modules['RPi'] = fake_rpi.RPi     # Fake RPi
+sys.modules['RPi.GPIO'] = fake_rpi.RPi.GPIO # Fake GPIO
 sys.modules['smbus'] = fake_rpi.smbus # Fake smbus (I2C)
 ```
 
@@ -112,3 +111,41 @@ __main__.MyBus.read_byte_data(1, 2): 72
 __main__.MyBus.read_i2c_block_data(1, 2, 3): [90, 90, 90]
 ```
 
+# Change Log
+
+|  Date      | Ver.  | Notes                                         |
+| ---------- | ----- | --------------------------------------------- |
+| 2020-04-03 | 0.6.4 | additions to gpio and camera                  |
+| 2020-02-03 | 0.6.3 | moved to toml and github workflows            |
+| 2019-10-19 | 0.6.2 | fixes from scivision and Rotzbua              |
+| 2019-03-29 | 0.6.1 | bug fix with randint range                    |
+| 2017-11-30 | 0.6.0 | bug fix with printing                         |
+| 2017-10-23 | 0.5.3 | bug fix with randint                          |
+| 2017-09-05 | 0.5.1 | flushing out interfaces                       |
+| 2017-07-07 | 0.3.0 | fixed bugs, print statement, and reduced dups |
+| 2017-04-08 | 0.1.0 | initial python3 setup and support             |
+| 2017-04-02 | 0.0.2 | pushed to pypi with landscape.io fixes        |
+| 2017-04-01 | 0.0.1 | created                                       |
+
+# MIT License
+
+**Copyright (c) 2017 Kevin J. Walchko**
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
