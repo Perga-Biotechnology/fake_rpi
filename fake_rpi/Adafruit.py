@@ -1,6 +1,6 @@
 import random
 
-from .Base import Base
+from .base import Base
 
 class HW(object):
     def write8(self, a, b):

@@ -1,7 +1,7 @@
 import numpy as np
 
 from .wrappers import printf
-from .Base import Base
+from .base import Base
 
 
 class eAWBGainModes:

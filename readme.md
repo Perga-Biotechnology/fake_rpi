@@ -2,20 +2,15 @@
 
 ## Use Case
 
-I do a lot of development on my Powerbook and I got tired of constantly
-creating a fake interface for dev on my laptop and testing on Travis CI.
-
-So, does this simulate everything on a Raspberry Pi? **No!** 
-
-|          |                       |
-| -------- | --------------------- |
-| Adafruit | LSM303(accelerometer) |
-| nxp_imu  | adafruit accelerometer|
-| GPIO     | gpio pins             |
-| picamera | camera                |
-| RPi      | PWM                   |
-| smbus    | i2c                   |
-| serial   | not done yet          |
+|          |                        |
+| -------- | ---------------------- |
+| Adafruit | LSM303(accelerometer)  |
+| nxp_imu  | adafruit accelerometer |
+| GPIO     | gpio pins              |
+| picamera | camera                 |
+| RPi      | PWM                    |
+| smbus    | i2c                    |
+| serial   | not done yet           |
 
 
 ## Development
@@ -89,32 +84,11 @@ sm = MyBus()
 b = sm.read_byte_data(0x21, 0x32)  # read in a byte
 ```
 
-### Printing On or Off
-
-Here is the output from `example.py` in the `git` repo when the printing
-is toggled on or off:
-
-```
-$ ./example.py
-<<< WARNING: using fake raspberry pi interfaces >>>
-
-$ ./example.py
-<<< WARNING: using fake raspberry pi interfaces >>>
-fake_rpi.RPi.PWM.__init__()
-fake_rpi.RPi.PWM.start(5,)
-fake_rpi.smbus.SMBus.__init__(1,)
-fake_rpi.smbus.SMBus.write_byte_data(1, 2, 3)
-fake_rpi.smbus.SMBus.read_byte_data(1, 2): 21
-fake_rpi.smbus.SMBus.close()
-__main__.MyBus.__init__()
-__main__.MyBus.read_byte_data(1, 2): 72
-__main__.MyBus.read_i2c_block_data(1, 2, 3): [90, 90, 90]
-```
-
 # Changelog
 
-|  Date      | Ver.  | Notes                                         |
+| Date       | Ver.  | Notes                                         |
 | ---------- | ----- | --------------------------------------------- |
+| 2020-04-03 | 0.7.0 | package structure changed                     |
 | 2020-04-03 | 0.6.4 | additions to gpio and camera                  |
 | 2020-02-03 | 0.6.3 | moved to toml and github workflows            |
 | 2019-10-19 | 0.6.2 | fixes from scivision and Rotzbua              |

@@ -1,9 +1,3 @@
-###############################################
-# The MIT License (MIT)
-# Copyright (c) 2017 Kevin Walchko
-# see LICENSE for full details
-##############################################
-# http://www.saltycrane.com/blog/2010/03/simple-python-decorator-examples/
 import logging
 from functools import wraps
 

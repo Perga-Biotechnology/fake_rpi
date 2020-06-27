@@ -1,9 +1,4 @@
-###############################################
-# The MIT License (MIT)
-# Copyright (c) 2017 Kevin Walchko
-# see LICENSE for full details
-##############################################
-from .Base import Base
+from .base import Base
 
 
 class Serial(Base):

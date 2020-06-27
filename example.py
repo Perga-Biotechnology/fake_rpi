@@ -1,28 +1,30 @@
 #!/usr/bin/env python
+import sys
+import logging
 
-import RPi.GPIO
 from fake_rpi import printf
 from fake_rpi import toggle_print
 
-# Replace libraries by fake ones
-import sys
-import fake_rpi
+try:
+    import RPi.GPIO
+    import smbus
+except ImportError:
+    import fake_rpi
 
-sys.modules['RPi'] = fake_rpi.RPi
-sys.modules['smbus'] = fake_rpi.smbus
+    sys.modules['RPi'] = fake_rpi.RPi
+    sys.modules['smbus'] = fake_rpi.smbus
 
-# Then keep the transparent import everywhere in the application and dependencies
+import RPi
+import smbus
 
-toggle_print(True)  # turn on/off printing
 
-pwm = GPIO.PWM()
+pwm = RPi.GPIO.PWM()
 pwm.start(5)
 
 i2c = smbus.SMBus(1)
 i2c.write_byte_data(1, 2, 3)
 i2c.read_byte_data(1, 2)
 i2c.close()
-
 
 class MyBus(smbus.SMBus):
     """
@@ -36,7 +38,6 @@ class MyBus(smbus.SMBus):
     def read_byte_data(self, a, b):
         ret = 0x71 if a == 0x68 else 0x48
         return ret
-
 
 i2c = MyBus()
 i2c.read_byte_data(1, 2)

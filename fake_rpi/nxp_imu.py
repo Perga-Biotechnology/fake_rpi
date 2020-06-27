@@ -1,5 +1,4 @@
-from .Base import Base
-
+from .base import Base
 
 class IMU(Base):
     def __init__(self, dps=250):

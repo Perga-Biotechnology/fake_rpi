@@ -1,5 +1,5 @@
 from fake_rpi.wrappers import printf
-from fake_rpi.Base import Base
+from fake_rpi.base import Base
 from random import randint
 
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fake_rpi"
-version = "0.6.4"
+version = "0.7.0"
 description = "Fake Raspberry Pi programming interfaces for development or unit testing"
 authors = ["ycbayrak <dev@perga.co>"]
 license = "MIT"
@@ -22,7 +22,6 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.6"
 numpy = "*"
-importlib-metadata = {version="*", python="<3.8"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
