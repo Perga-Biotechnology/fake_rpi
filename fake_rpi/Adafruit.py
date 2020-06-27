@@ -1,16 +1,10 @@
-###############################################
-# The MIT License (MIT)
-# Copyright (c) 2017 Kevin Walchko
-# see LICENSE for full details
-##############################################
 import random
-from .Base import Base
 
+from .Base import Base
 
 class HW(object):
     def write8(self, a, b):
         pass
-
 
 class LSM303(Base):
     """

@@ -1,17 +1,9 @@
-###############################################
-# The MIT License (MIT)
-# Copyright (c) 2017 Kevin Walchko
-# see LICENSE for full details
-##############################################
 from fake_rpi.wrappers import printf
 from fake_rpi.Base import Base
 from random import randint
 
 
 class _GPIO(Base):
-    # @printf
-    # def __init__(self):
-    #     Base.__init__(self, self.__class__)
 
     class PWM(Base):
         @printf

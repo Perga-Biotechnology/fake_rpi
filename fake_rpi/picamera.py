@@ -1,10 +1,5 @@
-###############################################
-# The MIT License (MIT)
-# Copyright (c) 2017 Kevin Walchko
-# see LICENSE for full details
-##############################################
-import numpy as np  # type: ignore
-# import platform
+import numpy as np
+
 from .wrappers import printf
 from .Base import Base
 
@@ -92,10 +87,8 @@ class BGR(object):
         self.array = np.random.rand(*self.array.shape)
 
 
-# class picamera(object):
-#     """Fake class"""
 class PiCamera(Base):
-    """Fake class"""
+    """Fake camera class"""
 
     AWB_MODES = eAWBGainModes()
     EXPOSURE_MODES = eExposureModes()
@@ -116,8 +109,6 @@ class PiCamera(Base):
     sharpness = 0
 
     def __init__(self):
-        # empty constructor
-        # print('WARNING: Fake_RPi PiCamera on {}'.format(platform.system().lower()))
         Base.__init__(self, self.__class__)
         pass
 
@@ -128,7 +119,6 @@ class PiCamera(Base):
         pass
 
     def close(self):
-        # this does nothing
         pass
 
     @printf
