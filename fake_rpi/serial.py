@@ -1,4 +1,4 @@
-from .base import Base
+from fake_rpi.base import Base
 
 
 class Serial(Base):
