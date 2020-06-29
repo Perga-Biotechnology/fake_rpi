@@ -15,6 +15,12 @@ import picamera
 import serial
 
 
+def test_adafruit():
+    try:
+        from fake_rpi.adafruit import HW, LSM303, MCP230XX
+    except:
+        assert False
+
 def test_smbus():
     i2c = smbus.SMBus(1)
 
