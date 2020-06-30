@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from distutils.core import setup
+from fake_rpi import __version__
 
 packages = \
 ['fake_rpi']
@@ -12,7 +13,7 @@ install_requires = \
 
 setup_kwargs = {
     'name': 'fake-rpi',
-    'version': '0.7.1',
+    'version': __version__,
     'description': 'Fake Raspberry Pi programming interfaces for development or unit testing',
     'long_description': None,
     'author': 'ycbayrak',

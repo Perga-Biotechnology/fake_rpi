@@ -9,3 +9,4 @@ from .wrappers import printf
 from .wrappers import toggle_print
 
 __author__ = 'Perga Biotechnology'
+__version__ = "0.7.2"
