@@ -2,9 +2,9 @@ import numpy as np
 
 from .wrappers import printf
 from .base import Base
+from enum import Enum
 
-
-class eAWBGainModes:
+class eAWBGainModes(Enum):
     OFF = "off"
     AUTO = "auto"
     SUNLIGHT = "sunlight"
@@ -17,7 +17,7 @@ class eAWBGainModes:
     HORIZON = "horizon"
 
 
-class eImageEffects:
+class eImageEffects(Enum):
     NONE = "none"
     NEGATIVE = "negative"
     SOLARIZE = "solarize"
@@ -42,7 +42,7 @@ class eImageEffects:
     DEINTERLACE2 = "deinterlace2"
 
 
-class eFlashModes:
+class eFlashModes(Enum):
     OFF = "off"
     AUTO = "auto"
     ON = "on"
@@ -51,7 +51,7 @@ class eFlashModes:
     TORCH = "torch"
 
 
-class eExposureModes:
+class eExposureModes(Enum):
     OFF = "off"
     AUTO = "auto"
     NIGHT = "night"
@@ -67,7 +67,7 @@ class eExposureModes:
     FIREWORKS = "fireworks"
 
 
-class eDRCStrengths:
+class eDRCStrengths(Enum):
     OFF = 'off'
     LOW = 'low'
     MEDIUM = 'medium'
