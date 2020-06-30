@@ -90,11 +90,11 @@ class BGR(object):
 class PiCamera(Base):
     """Fake camera class"""
 
-    AWB_MODES = eAWBGainModes()
-    EXPOSURE_MODES = eExposureModes()
-    DRC_STRENGTHS= eDRCStrengths()
-    FLASH_MODES = eFlashModes()
-    IMAGE_EFFECTS = eImageEffects()
+    AWB_MODES = eAWBGainModes
+    EXPOSURE_MODES = eExposureModes
+    DRC_STRENGTHS= eDRCStrengths
+    FLASH_MODES = eFlashModes
+    IMAGE_EFFECTS = eImageEffects
     
     resolution = (1280, 720)
     awb_gains = 0.0
